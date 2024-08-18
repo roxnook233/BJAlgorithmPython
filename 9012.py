@@ -19,7 +19,27 @@ for _ in range(t):
                 if cnt != len(s) // 2: print("NO")
                 else: print("YES")
                 
+'''
+import sys
+input = sys.stdin.readline
 
+def vps(temp):
+    stk = []
+    for i in temp:
+        if i == '(':
+            stk.append(i)  # 열린 괄호일 경우 스택에 추가
+        elif i == ')':
+            if stk and stk[-1] == '(':  # 스택에 열린 괄호가 있을 경우
+                stk.pop()  # 열린 괄호 제거
+            else:
+                return 'NO'  # 짝이 맞지 않음
+    return 'YES' if not stk else 'NO'  # 스택이 비어있으면 YES, 아니면 NO
+
+k = int(input())
+for _ in range(k):
+    temp = input().strip()
+    print(vps(temp))
+'''
 
 
 
