@@ -22,16 +22,16 @@ for key in minp:
 N = int(input())
 ninp = input().split()
 ndict ={}
-for key in ninp:
-    if key not in ndict.keys():
-        ndict[key] = 1
-    else:
+for key in ninp: 
+    if key in ndict: #해시테이블에 바로 접근해서 key를 찾기 때문에 성능이 더 좋음
         ndict[key] += 1
+    else:
+        ndict[key] = 1
         
 M = int(input())
 minp = input().split()
 for key in minp:
-    if key in ndict.keys():
+    if key in ndict:
         print(ndict[key], end = " ")
     else:
         print(0, end = " ")
