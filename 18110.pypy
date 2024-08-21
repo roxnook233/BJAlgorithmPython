@@ -1,0 +1,17 @@
+# BJ 18110
+def cRound(num):
+    return int(num) if num - int(num) < 0.5 else int(num) +1
+N = int(input())
+if N == 0: 
+    print(0)
+    exit()
+
+lis = []
+for _  in range(N):
+    lis.append(int(input()))
+
+lis.sort()
+cutNum = cRound(N * 0.15)
+prolis = lis[cutNum: N-cutNum]
+print(cRound(sum(prolis) / len(prolis)))
+
